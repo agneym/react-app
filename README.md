@@ -52,7 +52,7 @@ You can replace these with their `npm` counterparts, if you prefer.
 1. Code split into `vendor.js` and hashed javascript filenames. 
 This helps in pushing new code without worrying about caching issues.
 2. Webpack automatically looks for and installs plugins that are not installed by default.  
-Just import the required library and let wepack worry about installing it. 
+Just import the required library and let webpack worry about installing it. 
 
     https://github.com/webpack-contrib/npm-install-webpack-plugin
 3. Extracts CSS to a new file and minifies it.
