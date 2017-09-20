@@ -61,7 +61,7 @@ Just import the required library and let webpack worry about installing it.
 
 4. Minifies react and react-dom packages.
 
-    http://moduscreate.com/optimizing-react-es6-webpack-production-build/
+    https://facebook.github.io/react/docs/optimizing-performance.html#webpack
 5. Removes debugging consoles for Production build
 
 
