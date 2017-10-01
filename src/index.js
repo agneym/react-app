@@ -5,6 +5,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 if (module.hot) {
   module.hot.accept();
 
