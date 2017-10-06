@@ -1,7 +1,7 @@
 {
   "name": "react-app",
   "version": "1.0.0",
-  "description": "A React Configuration",
+  "description": "A React Boilerplate Configuration",
   "main": "index.js",
   "scripts": {
     "build": "webpack --env=prod",
@@ -15,7 +15,7 @@
       "git add"
     ]
   },
-  "author": "Boy With Silver Wings",
+  "author": "Boy With Silver Wings <agney@outlook.in>",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -66,13 +66,17 @@
   },
   "dependencies": {
     "core-js": "^2.5.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "whatwg-fetch": "^2.0.3"
   },
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoyWithSilverWings/react-app.git"
   }
 }
