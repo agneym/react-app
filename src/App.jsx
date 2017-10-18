@@ -1,78 +1,44 @@
 /* eslint-disable */
 import React, {Component} from 'react';
 import 'whatwg-fetch';
-import ComplexSearch from 'complex-search';
 
-const options = [
-  {
-    name: 'Key Phrases',
-    badge: 0
-  },
-  {
-    name: 'Inferences',
-    badge: 1,
-    items: [
-      {
-        name: 'when',
-      },
-      {
-        name: 'there'
-      },
-      {
-        name: 'was'
-      }
-    ]
-  },
-  {
-    name: 'Tags',
-    badge: 0,
-    items: [
-      {
-        name: 'a',
-        icon: 'f'
-      },
-      {
-        name: 'girl',
-        icon: 'v'
-      },
-      {
-        name: 'and',
-        icon: 'j'
-      },
-      {
-        name: 'rainbow',
-        icon: 'n'
-      }
-    ]
+class App extends Component {
+  componentDidMount() {
+    console.log("Done");
   }
-];
-
-class App extends React.Component {
   constructor(props) {
     super(props);
-    this.search = this.search.bind(this);
+    this.state = {
+      data: ''
+    }
+    this.handleClick = this.handleClick.bind(this);
   }
-  search(event) {
-    console.log(event);
-  }
-  onView(event) {
-    console.log('View');
-  }
-  onTick(event) {
-    console.log('Tick');
+  handleClick(event) {
+    event.preventDefault();
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      body: {
+        "userId": 10,
+        "id": 123,
+        "title": "Click Happy",
+        "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+      }
+    })
+    .then((res)=>{
+      this.setState({
+        data: res
+      });
+      console.log(res);
+    });
   }
   render() {
     return (
-      <main>
-        <ComplexSearch
-          options={options}
-          onView={this.onView}
-          onTick={this.onTick}
-        />
-      </main>
+      <div>
+        <p>App</p>
+        <button onClick={this.handleClick}>Click</button>
+      </div>
     );
   }
 
 }
-  
 export default App;
