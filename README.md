@@ -3,7 +3,7 @@
 My configuration for a react app.
 
 ## Quick Overview
-* `git clone` this repository to get started.
+* `git clone --depth 1` this repository to get started.
 * `yarn install` to install needed dependencies.
 * `yarn start` to start the application on port 3002
 * `yarn build` to build the application.
