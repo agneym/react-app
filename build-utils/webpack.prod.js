@@ -7,6 +7,8 @@ const workboxPlugin = require('workbox-webpack-plugin');
 const path = require("path");
 const commonPaths = require("./common-paths");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const WebpackMonitor = require('webpack-monitor');
 
 module.exports = {
   devtool: "source-map",
@@ -77,6 +79,10 @@ module.exports = {
           'index.html'
         ]
       }
-    ])
+    ]),
+    new WebpackMonitor({
+      launch: true,
+      post: 3030
+    })
   ]
 };
