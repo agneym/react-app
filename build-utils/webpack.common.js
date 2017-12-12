@@ -9,7 +9,8 @@ const config = {
   },
   output: {
     filename: "[chunkhash].bundle.js",
-    path: commonPaths.outputPath
+    path: commonPaths.outputPath,
+    publicPath: "/"
   },
   resolve: {
     extensions: [".js", ".jsx"]
@@ -26,7 +27,8 @@ const config = {
             }
           },
           {
-            loader: "image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false",
+            loader:
+              "image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false"
           }
         ]
       },
