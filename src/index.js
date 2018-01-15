@@ -9,15 +9,15 @@ import App from "./App";
 import "core-js/es6/map";
 import "core-js/es6/set";
 
-if (module.hot) {
-  module.hot.accept();
+// if (module.hot) {
+//   module.hot.accept();
 
-  window.addEventListener("message", e => {
-    if (process.env.NODE_ENV !== "production") {
-      console.clear();
-    }
-  });
-}
+//   window.addEventListener("message", e => {
+//     if (process.env.NODE_ENV !== "production") {
+//       console.clear();
+//     }
+//   });
+// }
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {

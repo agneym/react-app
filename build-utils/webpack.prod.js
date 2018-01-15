@@ -3,10 +3,12 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const workboxPlugin = require('workbox-webpack-plugin');
+const workboxPlugin = require("workbox-webpack-plugin");
 const path = require("path");
 const commonPaths = require("./common-paths");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+const PurifyCSSPlugin = require("purifycss-webpack");
+const WebpackMonitor = require("webpack-monitor");
 
 module.exports = {
   devtool: "source-map",
@@ -66,17 +68,19 @@ module.exports = {
     new webpack.optimize.AggressiveMergingPlugin(),
     new workboxPlugin({
       globDirectory: commonPaths.outputPath,
-      globPatterns: ['**/*.{html,js,css}'],
-      swDest: path.join(commonPaths.outputPath, 'sw.js'),
+      globPatterns: ["**/*.{html,js,css}"],
+      swDest: path.join(commonPaths.outputPath, "sw.js")
     }),
     new CopyWebpackPlugin([
-      { 
+      {
         from: commonPaths.public,
         to: commonPaths.outputPath,
-        ignore: [
-          'index.html'
-        ]
+        ignore: ["index.html"]
       }
-    ])
+    ]),
+    new WebpackMonitor({
+      launch: true,
+      post: 3030
+    })
   ]
 };

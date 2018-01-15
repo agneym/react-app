@@ -1,4 +1,5 @@
 const path = require("path");
+const glob = require("glob");
 
 module.exports = {
   root: path.resolve(__dirname, ".."),

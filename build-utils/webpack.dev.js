@@ -51,7 +51,11 @@ const config = {
       }
     ]
   },
-  plugins: [new NpmInstallPlugin(), new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin]
+  plugins: [
+    new NpmInstallPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
+  ]
 };
 
 module.exports = config;

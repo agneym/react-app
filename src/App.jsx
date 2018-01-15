@@ -1,6 +1,6 @@
 /* eslint-disable */
-import React, {Component} from 'react';
-import 'whatwg-fetch';
+import React, { Component } from "react";
+import "whatwg-fetch";
 
 class App extends Component {
   componentDidMount() {
@@ -9,22 +9,22 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: ''
-    }
+      data: ""
+    };
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(event) {
     event.preventDefault();
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
       body: {
-        "userId": 10,
-        "id": 123,
-        "title": "Click Happy",
-        "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+        userId: 10,
+        id: 123,
+        title: "Click Happy",
+        body:
+          "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
       }
-    })
-    .then((res)=>{
+    }).then(res => {
       this.setState({
         data: res
       });
@@ -39,7 +39,5 @@ class App extends Component {
       </div>
     );
   }
-
 }
-
 export default App;
