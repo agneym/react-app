@@ -4,7 +4,7 @@ import "whatwg-fetch";
 
 class App extends Component {
   componentDidMount() {
-    console.log("Done");
+    console.log("App View Loaded");
   }
   constructor(props) {
     super(props);
