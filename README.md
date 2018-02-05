@@ -4,11 +4,11 @@ My configuration for a react app.
 
 ## Quick Overview
 * `git clone --depth 1` this repository to get started.
-* `yarn install` to install needed dependencies.
-* `yarn start` to start the application on port 3002
-* `yarn build` to build the application.
+* `npm install` to install needed dependencies.
+* `npm start` to start the application on port 3002
+* `npm build` to build the application.
 
-You can replace these with their `npm` counterparts, if you prefer. 
+You can replace these with their `yarn` counterparts, if you prefer. 
 
 ## Features
 * ### [POSTCSS Plugins](http://postcss.org/)
@@ -47,6 +47,9 @@ You can replace these with their `npm` counterparts, if you prefer.
 
 * ### [Workbox](https://developers.google.com/web/tools/workbox)
   Generates an optimised service worker with support for precaching and offline loading.
+
+* ### Unit Testing
+  Unit testing setup using [Jest](https://facebook.github.io/jest/). Shallow rendering support with [Enzyme](http://airbnb.io/enzyme/)
   
 ## Other enhancements
 1. Code split into `vendor.js` and hashed javascript filenames. 
