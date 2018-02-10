@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const workboxPlugin = require("workbox-webpack-plugin");
 const path = require("path");
 const commonPaths = require("./common-paths");
-var CopyWebpackPlugin = require("copy-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const PurifyCSSPlugin = require("purifycss-webpack");
 const WebpackMonitor = require("webpack-monitor");
 
