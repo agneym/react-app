@@ -57,6 +57,7 @@
     "prettier": "^1.10.2",
     "purify-css": "^1.2.6",
     "purifycss-webpack": "^0.7.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^15.6.2",
     "style-loader": "^0.18.2",
     "stylelint": "^8.4.0",
