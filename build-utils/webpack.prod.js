@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const workboxPlugin = require("workbox-webpack-plugin");
@@ -12,13 +12,6 @@ const WebpackMonitor = require("webpack-monitor");
 
 module.exports = {
   devtool: "source-map",
-  devServer: {
-    contentBase: commonPaths.outputPath,
-    port: 3000,
-    host: "0.0.0.0",
-    useLocalIp: true,
-    compress: true
-  },
   module: {
     rules: [
       {
@@ -58,14 +51,14 @@ module.exports = {
         NODE_ENV: JSON.stringify("production")
       }
     }),
-    new UglifyJSPlugin({
-      test: /\.jsx?$/,
-      warnings: false,
-      compress: {
-        drop_console: true
+    new UglifyJsPlugin({
+      sourceMap: true,
+      uglifyOptions: {
+        compress: {
+          inline: false
+        }
       }
     }),
-    new webpack.optimize.AggressiveMergingPlugin(),
     new workboxPlugin({
       globDirectory: commonPaths.outputPath,
       globPatterns: ["**/*.{html,js,css}"],

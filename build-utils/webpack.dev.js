@@ -1,9 +1,7 @@
-const NpmInstallPlugin = require("npm-install-webpack-plugin");
 const webpack = require("webpack");
 const commonPaths = require("./common-paths");
 
 const config = {
-  devtool: "eval-source-map",
   devServer: {
     port: 3000,
     open: true,
@@ -34,14 +32,6 @@ const config = {
         ]
       },
       {
-        test: /\.jsx?$/,
-        enforce: "pre",
-        loader: "eslint-loader",
-        options: {
-          emitWarning: true
-        }
-      },
-      {
         test: /.jsx?$/,
         use: {
           loader: "babel-loader"
@@ -50,11 +40,7 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new NpmInstallPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
 
 module.exports = config;

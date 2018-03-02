@@ -4,7 +4,14 @@ import "whatwg-fetch";
 
 class App extends Component {
   componentDidMount() {
-    console.log("App View Loaded");
+    const request = this.props.query();
+    request.then(res => {
+      this.props.onSearchClicked();
+      this.setState({
+        data: res
+      });
+      console.log(res);
+    });
   }
   constructor(props) {
     super(props);
@@ -15,21 +22,6 @@ class App extends Component {
   }
   handleClick(event) {
     event.preventDefault();
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      body: {
-        userId: 10,
-        id: 123,
-        title: "Click Happy",
-        body:
-          "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
-      }
-    }).then(res => {
-      this.setState({
-        data: res
-      });
-      console.log(res);
-    });
   }
   render() {
     return (
