@@ -32,6 +32,12 @@ const config = {
         ]
       },
       {
+        enforce: "pre",
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
         test: /.jsx?$/,
         use: {
           loader: "babel-loader"
@@ -40,7 +46,10 @@ const config = {
       }
     ]
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.LoaderOptionsPlugin({ options: {} }) // Fix for eslint with webpack 4
+  ]
 };
 
 module.exports = config;
