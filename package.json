@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack-cli --mode=production --env=prod",
-    "start": "webpack-cli --mode=development --env=dev",
+    "start": "webpack-dev-server --mode=development --env=dev",
     "precommit": "lint-staged",
     "test": "jest",
     "test:coverage": "jest --coverage"
@@ -60,10 +60,12 @@
     "style-loader": "^0.18.2",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^17.0.0",
+    "tapable": "^1.0.0",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "url-loader": "^0.5.9",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0",
     "webpack-merge": "^4.1.2",
     "webpack-monitor": "^1.0.14",
     "workbox-webpack-plugin": "^2.1.3"

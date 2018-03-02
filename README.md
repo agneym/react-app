@@ -1,6 +1,8 @@
 # React Configuration
 
-My configuration for a react app.
+Configuration for a react app.
+
+Uses Webpack 4
 
 ## Quick Overview
 * `git clone --depth 1` this repository to get started.
