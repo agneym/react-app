@@ -3649,5 +3649,168 @@
     ],
     "pureCssSize": 1776,
     "unPureCssSize": 1920
+  },
+  {
+    "timeStamp": 1538324513389,
+    "time": 17937,
+    "hash": "382ad8ac1dc627a76fd6",
+    "errors": [],
+    "size": 421038,
+    "assets": [
+      {
+        "name": "382ad8ac1dc627a76fd6.bundle.js",
+        "chunks": [
+          0
+        ],
+        "size": 110284,
+        "minified": true
+      },
+      {
+        "name": "styles.css",
+        "chunks": [
+          0
+        ],
+        "size": 2007
+      },
+      {
+        "name": "382ad8ac1dc627a76fd6.bundle.js.map",
+        "chunks": [
+          0
+        ],
+        "size": 275913
+      },
+      {
+        "name": "styles.css.map",
+        "chunks": [
+          0
+        ],
+        "size": 87
+      },
+      {
+        "name": "index.html",
+        "chunks": [],
+        "size": 709
+      },
+      {
+        "name": "favicon.ico",
+        "chunks": [],
+        "size": 32038
+      }
+    ],
+    "chunks": [
+      {
+        "size": 129744,
+        "files": [
+          "382ad8ac1dc627a76fd6.bundle.js",
+          "styles.css",
+          "382ad8ac1dc627a76fd6.bundle.js.map",
+          "styles.css.map"
+        ],
+        "modules": [
+          {
+            "name": "./node_modules/react/index.js",
+            "size": 190,
+            "id": 0
+          },
+          {
+            "name": "./node_modules/object-assign/index.js",
+            "size": 2108,
+            "id": 1
+          },
+          {
+            "name": "./node_modules/react-dom/index.js",
+            "size": 1363,
+            "id": 2
+          },
+          {
+            "name": "./src/index.js + 1 modules",
+            "size": 1176,
+            "id": 3
+          },
+          {
+            "name": "./node_modules/whatwg-fetch/fetch.js",
+            "size": 13012,
+            "id": 4
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/emptyObject.js",
+            "size": 332,
+            "id": 5
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/isNode.js",
+            "size": 702,
+            "id": 6
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/isTextNode.js",
+            "size": 479,
+            "id": 7
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/containsNode.js",
+            "size": 923,
+            "id": 8
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/shallowEqual.js",
+            "size": 1616,
+            "id": 9
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/getActiveElement.js",
+            "size": 912,
+            "id": 10
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/emptyFunction.js",
+            "size": 959,
+            "id": 11
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/ExecutionEnvironment.js",
+            "size": 935,
+            "id": 12
+          },
+          {
+            "name": "./node_modules/react-dom/node_modules/fbjs/lib/invariant.js",
+            "size": 1506,
+            "id": 13
+          },
+          {
+            "name": "./node_modules/react-dom/cjs/react-dom.production.min.js",
+            "size": 94969,
+            "id": 14
+          },
+          {
+            "name": "./node_modules/react/node_modules/fbjs/lib/emptyFunction.js",
+            "size": 959,
+            "id": 15
+          },
+          {
+            "name": "./node_modules/react/node_modules/fbjs/lib/emptyObject.js",
+            "size": 332,
+            "id": 16
+          },
+          {
+            "name": "./node_modules/react/node_modules/fbjs/lib/invariant.js",
+            "size": 1506,
+            "id": 17
+          },
+          {
+            "name": "./node_modules/react/cjs/react.production.min.js",
+            "size": 5724,
+            "id": 18
+          },
+          {
+            "name": "./src/index.css",
+            "size": 41,
+            "id": 23
+          }
+        ]
+      }
+    ],
+    "pureCssSize": 1845,
+    "unPureCssSize": 2007
   }
 ]
