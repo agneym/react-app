@@ -2,7 +2,7 @@
 
 Configuration for a react app.
 
-Uses Webpack 4
+Uses Webpack 4, Babel 7
 
 ## Quick Overview
 * `git clone --depth 1` this repository to get started.
