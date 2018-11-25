@@ -1,5 +1,6 @@
 const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const workboxPlugin = require("workbox-webpack-plugin");
@@ -14,20 +15,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                importLoaders: 1
-              }
-            },
-            {
-              loader: "postcss-loader"
-            }
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader"
+        ],
       },
       {
         test: /\.jsx?$/,
@@ -38,11 +30,24 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(["dist"], {
       root: commonPaths.root
     }),
-    new ExtractTextPlugin("styles.css"),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: "production",
       DEBUG: false
