@@ -8,9 +8,8 @@ class App extends Component {
     this.state = {
       data: ""
     };
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(event) {
+  handleClick = (event) => {
     event.preventDefault();
   }
   render() {
