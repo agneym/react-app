@@ -11,6 +11,7 @@ const config = {
     useLocalIp: true,
     historyApiFallback: true
   },
+  devtool: "eval-source-map",
   module: {
     rules: [
       {
