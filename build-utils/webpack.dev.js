@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-const commonPaths = require("./common-paths");
 
 const config = {
   devServer: {
@@ -49,7 +48,6 @@ const config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.LoaderOptionsPlugin({ options: {} }) // Fix for eslint with webpack 4
   ]
 };
 
