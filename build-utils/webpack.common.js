@@ -1,15 +1,15 @@
 const commonPaths = require("./common-paths");
 const webpack = require("webpack");
-const htmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
-    publicPath: "/"
+    publicPath: "/",
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -19,23 +19,23 @@ const config = {
           {
             loader: "url-loader",
             options: {
-              limit: 1000
-            }
-          }
-        ]
+              limit: 1000,
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,
-        loader: "html-loader"
-      }
-    ]
+        loader: "html-loader",
+      },
+    ],
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new htmlWebpackPlugin({
-      template: "public/index.html"
-    })
-  ]
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    }),
+  ],
 };
 
 module.exports = config;
