@@ -1,6 +1,7 @@
 const commonPaths = require("./common-paths");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 
 const config = {
   output: {
@@ -47,7 +48,11 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
+      inject: true,
       template: "public/index.html",
+    }),
+    new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
+      // WHATEVER: 42 will replace %WHATEVER% with 42 in index.html.
     }),
   ],
 };
