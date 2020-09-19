@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 const config = {
   devServer: {
@@ -51,6 +52,7 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
+    new ReactRefreshWebpackPlugin(),
   ],
 };
 
