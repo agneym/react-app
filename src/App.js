@@ -1,24 +1,16 @@
-/* eslint-disable */
-import React, { Component } from "react";
+import React from "react";
 import "whatwg-fetch";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: "",
-    };
-  }
-  handleClick = (event) => {
+function App() {
+  const handleClick = (event) => {
     event.preventDefault();
   };
-  render() {
-    return (
-      <div>
-        <p>App</p>
-        <button onClick={this.handleClick}>Click</button>
-      </div>
-    );
-  }
+  return (
+    <main>
+      <h1>App</h1>
+      <button onClick={handleClick}>Click</button>
+    </main>
+  );
 }
+
 export default App;
