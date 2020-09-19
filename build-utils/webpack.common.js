@@ -28,6 +28,20 @@ const config = {
         test: /\.html$/,
         loader: "html-loader",
       },
+      {
+        test: /\.worker\.(c|m)?js$/i,
+        use: [
+          {
+            loader: "worker-loader",
+            options: {
+              esModule: false,
+            },
+          },
+          {
+            loader: "babel-loader",
+          },
+        ],
+      },
     ],
   },
   plugins: [
