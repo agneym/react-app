@@ -8,8 +8,8 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 // Utilities
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 // Generate service worker
 const workboxPlugin = require("workbox-webpack-plugin");
@@ -45,9 +45,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"], {
-      root: commonPaths.root,
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
@@ -61,12 +59,16 @@ module.exports = {
       skipWaiting: true,
       swDest: path.join(commonPaths.outputPath, "sw.js"),
     }),
-    new CopyWebpackPlugin([
-      {
-        from: commonPaths.public,
-        to: commonPaths.outputPath,
-        ignore: ["index.html"],
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: commonPaths.public,
+          to: commonPaths.outputPath,
+          globOptions: {
+            ignore: ["index.html"],
+          },
+        },
+      ],
+    }),
   ],
 };
