@@ -60,8 +60,6 @@
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.13.1",
     "style-loader": "^1.2.1",
-    "stylelint": "^13.7.1",
-    "stylelint-config-standard": "^20.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.2",

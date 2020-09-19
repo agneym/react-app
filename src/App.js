@@ -6,12 +6,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: ""
+      data: "",
     };
   }
   handleClick = (event) => {
     event.preventDefault();
-  }
+  };
   render() {
     return (
       <div>
