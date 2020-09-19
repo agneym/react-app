@@ -11,7 +11,8 @@ module.exports = {
     "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)":
       "<rootDir>/test-utils/fileTransform.js",
   },
+  moduleDirectories: ["node_modules", "test-utils"],
   roots: ["<rootDir>/src"],
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
-  setupFilesAfterEnv: ["./jest.setup.js", "./test-utils/setup-env.js"],
+  setupFilesAfterEnv: ["<rootDir>/test-utils/jest.setup.js"],
 };
