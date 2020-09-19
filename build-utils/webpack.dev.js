@@ -1,5 +1,7 @@
 const webpack = require("webpack");
 
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+
 const config = {
   devServer: {
     port: 3000,
@@ -8,7 +10,7 @@ const config = {
     overlay: true,
     hot: true,
     useLocalIp: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   devtool: "eval-source-map",
   module: {
@@ -18,37 +20,38 @@ const config = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "style-loader"
+            loader: "style-loader",
           },
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
           {
-            loader: "postcss-loader"
-          }
-        ]
+            loader: "postcss-loader",
+          },
+        ],
       },
       {
         enforce: "pre",
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "eslint-loader"
+        loader: "eslint-loader",
       },
       {
         test: /.jsx?$/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
         },
-        exclude: /(node_modules|dist|build-utils|webpack.config.js)/
-      }
-    ]
+        exclude: /(node_modules|dist|build-utils|webpack.config.js)/,
+      },
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-  ]
+    new CaseSensitivePathsPlugin(),
+  ],
 };
 
 module.exports = config;
