@@ -9,20 +9,18 @@
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "author": "Boy With Silver Wings <agney@outlook.in>",
   "license": "ISC",
   "dependencies": {
-    "@babel/plugin-transform-react-constant-elements": "^7.10.4",
+    "dayjs": "^1.8.36",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.8.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-select": "^3.1.0",
     "whatwg-fetch": "^3.4.1"
   },
   "devDependencies": {
@@ -30,6 +28,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@babel/plugin-transform-react-constant-elements": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.2",
@@ -42,6 +41,7 @@
     "babel-eslint": "10.x",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -49,7 +49,7 @@
     "copy-webpack-plugin": "^6.1.1",
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.7",
-    "eslint": "6.x",
+    "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "^4.0.2",
@@ -73,7 +73,6 @@
     "postcss-loader": "^4.0.2",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
-    "pretty-quick": "^3.0.2",
     "purify-css": "^1.2.6",
     "purifycss-webpack": "^0.7.0",
     "react-addons-test-utils": "^15.6.2",
@@ -94,5 +93,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BoyWithSilverWings/react-app.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }

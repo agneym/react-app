@@ -13,6 +13,7 @@ const plugins = [
   "@babel/plugin-proposal-optional-chaining",
   "@babel/plugin-proposal-class-properties",
   "@babel/plugin-transform-react-constant-elements",
+  "syntax-dynamic-import",
 ];
 
 module.exports = {
@@ -21,6 +22,9 @@ module.exports = {
   env: {
     development: {
       plugins: ["react-refresh/babel"],
+    },
+    production: {
+      plugins: ["transform-react-remove-prop-types"],
     },
   },
 };

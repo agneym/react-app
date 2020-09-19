@@ -8,5 +8,3 @@ webpack.config.js
 postcss.config.js
 
 dist
-
-*.spec.js
