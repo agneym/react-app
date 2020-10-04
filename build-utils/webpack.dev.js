@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
@@ -20,7 +19,6 @@ const config = {
     rules: [
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: "style-loader",
@@ -52,7 +50,6 @@ const config = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new ReactRefreshWebpackPlugin(),
     new WatchMissingNodeModulesPlugin(path.resolve("node_modules")),
