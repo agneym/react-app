@@ -10,7 +10,7 @@ const config = {
     publicPath: "/",
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js"],
   },
   module: {
     rules: [
