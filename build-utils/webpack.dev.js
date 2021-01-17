@@ -1,5 +1,6 @@
 const path = require("path");
 
+const { HotModuleReplacementPlugin } = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
@@ -51,6 +52,7 @@ const config = {
   },
   plugins: [
     new CaseSensitivePathsPlugin(),
+    new HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
     new WatchMissingNodeModulesPlugin(path.resolve("node_modules")),
   ],
