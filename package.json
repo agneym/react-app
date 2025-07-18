@@ -76,7 +76,7 @@
     "purify-css": "^1.2.6",
     "purifycss-webpack": "^0.7.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-dev-utils": "^11.0.1",
+    "react-dev-utils": "^12.0.1",
     "react-refresh": "^0.9.0",
     "react-test-renderer": "^17.0.1",
     "style-loader": "^1.2.1",
